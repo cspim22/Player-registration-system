@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<div>
+    <h1 style="text-align: center; color: darkblue;"> Os 10 melhores jogadores da historia </h1>
+    <div class = 'container'>
+        <table class = "table table-striped table-bordered" style="text-align: center;">
+            <tr>
+                <th style="color: goldenrod">Nome</th>
+                <th style="color: goldenrod">Time Principal</th>
+                <th style="color: goldenrod">Gols Na Narreira</th>
+                <th style="color: goldenrod">Principal Titulo</th>
+                <th style="color: goldenrod">Em atividade ?</th>
+                <th style="color: goldenrod">Biografia</th>
+                <th style="color: goldenrod">Alterar Dados </th>
+                <th style="color: goldenrod">Excluir</th>
+            </tr>
+
+            
+            {% for dados in dado %}
+            
+            <tr>
+                <td>{{dados.nome}}</td>
+                <td>{{dados.time_principal}}</td>
+                <td>{{dados.gols_na_carreira}}</td>
+                <td>{{dados.principal_titulo}}</td>
+                <td>{{dados.ainda_joga}}</td>
+                <td><button class=" btn btn-primary"><a  style= " color: white;"href= "{% url 'historia' dados.id %} " > Biografia </a></button></td>
+                <td><button class=" btn btn-secondary"><a style="color: white" href = "{% url 'alterar_melhores' dados.id %}"> Alterar </a></button></td>
+                <td><button class = "btn btn-danger"><a style="color: white" href = "{% url 'excluir_melhores' dados.id %}"> Excluir </a></button></td>
+            </tr>
+            </tr>
+
+
+            
+            {% endfor %}
+
+            </table>
+    </div>
+    
+    <td><button class="btn btn-info" style="margin-bottom: 20px;" > <a style="color: white;" href= "{% url 'novo_melhor_historia' %} " > Add jogador </a></button></td>
+    <td><button class = " btn btn-info" style="margin-bottom: 20px;"><a style ="color: white;"href= "{% url 'inicio' %} " > Voltar ao inicio </a></button></td>
+</div>
+{% endblock %}
+
+    
+    
+
+
+
+    

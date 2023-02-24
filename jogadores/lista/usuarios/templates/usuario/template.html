@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<div class="container">
+    <h1  style="text-align: center; color: darkblue"> Criar Novo Usuario </h1>
+
+    <form method='POST'>
+        {% csrf_token %}
+        {{ formulario.as_p }}
+        <button class="btn btn-primary" type="submit"> Criar Novo Usuario </button>
+        <a href="{% url 'login' %}"> Já Possui uma Conta? </a>
+    </form>
+   
+    
+
+</div>
+{% endblock %}
+
+<!--Botao do tipo submit significa que quando ele for clicado irá enviar informações-->

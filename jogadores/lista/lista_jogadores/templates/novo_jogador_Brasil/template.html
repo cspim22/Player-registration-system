@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %} <!-- importa a biblioteca crispy-->
+{% block conteudo %}
+
+
+<div class="container">
+    <h1 style="color: darkblue; text-align: center;">Adicione Um Novo Jogador</h1>
+    <form action = "" method="POST"> 
+        {% csrf_token %} 
+        {{formulario | crispy}}
+        <button style="color: white;" class="button: btn btn-success" type="submit">Salvar</button> 
+    </form>
+
+</div>
+
+{% endblock %}

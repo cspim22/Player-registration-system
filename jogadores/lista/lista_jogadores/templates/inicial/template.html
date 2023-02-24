@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<div>
+    <h1 style="text-align: center; color: darkblue;" > Lista de jogadores </h1>
+
+
+
+
+    <form action = "{% url 'lista_dos_melhores' %}" method="POST">  <!-- esse comando relaciona o botão com a pagina lista                                                               dos melhores, 'lista_dos_melhores esta relacionada                                                       com a linha 23 da aba urls.py(ir la para mais info)'-->
+        {% csrf_token %} 
+        <h1 style="color: white; text-align: center;"><button class = 'btn btn-info'type="submit">Melhores da Historia </button></h1>  <!--Aqui o botão é criado e recebe o nome que esta em branco-->
+    
+    </form>
+
+    <!--O codigo abaixo segue os mesmos comentarios do codigo acima -->
+    <form action = "{% url 'lista_brasil' %}" method="POST"> 
+        {% csrf_token %} 
+        <h1 style=" color: white; text-align: center;"><button class = 'btn btn-info' Type="submit" >Melhores do Brasil</button> </h1>
+    </form>
+
+
+</div>
+{% endblock %}
+<!-- Esse codigo é reponsavel por formar a pagina html
+     as linhas 1,2,3,4 formam o cabeçario da pagina 
+     as linhas 7,8,9,10 criam o botão que redirecionam para a lista_dos melhores  
+     as linhas 15,16,17,18 criam o botão que redirecionam para a lista_Brasil
+    -->

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<div class="container" style="padding: 30px;">
+    <h1 style="text-align: center; color: darkblue"  > Você saiu do Sistema </h1>
+    <form method='POST'>
+        {% csrf_token %}
+        <a href="{% url 'novo_usuario' %}"> Não possui conta? </a>
+    </form>
+</div>
+{% endblock %}v

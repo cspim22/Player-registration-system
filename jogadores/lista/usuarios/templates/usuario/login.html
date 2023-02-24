@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<div class="container" style="padding: 30px;">
+    <h1 style="text-align: center; color: darkblue"  > Fazer o Login </h1>
+    <form method='POST'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary" type="submit"> Fazer Login </button> <!-- LOGIN_REDIRECT_URL = 'inicio'-->
+        <a href="{% url 'novo_usuario' %}"> Criar Uma Conta </a>
+    </form>
+   
+    
+
+</div>
+{% endblock %}
